@@ -3,7 +3,7 @@ package com.woods.myoa.model;
 /**
  * Created by HuangLei on 2015/9/22.
  *
- * ÓÃ»§
+ * ç”¨æˆ·
  */
 public class User {
 
@@ -16,4 +16,5 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
 }
