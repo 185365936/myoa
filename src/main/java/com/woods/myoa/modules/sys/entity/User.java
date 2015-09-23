@@ -1,34 +1,33 @@
-package com.woods.myoa.model;
+package com.woods.myoa.modules.sys.entity;
 
-/**
- * Created by HuangLei on 2015/9/22.
- *
- * 用户
- */
 public class User {
 
-    /** 用户名 */
+    private Integer id;
+
     private String name;
 
-    /** 年龄 **/
     private Integer age;
 
-    /** 获取用户名 */
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
 
-    /** 设置用户名 */
     public void setName(String name) {
-        this.name = name;
+        this.name = name == null ? null : name.trim();
     }
 
-    /** 年龄 **/
     public Integer getAge() {
         return age;
     }
 
-    /** 年龄 **/
     public void setAge(Integer age) {
         this.age = age;
     }
