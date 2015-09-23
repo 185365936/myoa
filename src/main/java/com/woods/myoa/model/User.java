@@ -7,12 +7,15 @@ package com.woods.myoa.model;
  */
 public class User {
 
+    /** 用户名 */
     private String name;
 
+    /** 获取用户名 */
     public String getName() {
         return name;
     }
 
+    /** 设置用户名 */
     public void setName(String name) {
         this.name = name;
     }
