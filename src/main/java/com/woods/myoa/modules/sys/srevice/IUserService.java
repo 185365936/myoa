@@ -8,4 +8,5 @@ import com.woods.myoa.modules.sys.entity.User;
 public interface IUserService {
 
     User getUserById(Integer id);
+
 }

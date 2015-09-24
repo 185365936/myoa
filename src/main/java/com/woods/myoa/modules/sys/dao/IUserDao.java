@@ -4,6 +4,7 @@ package com.woods.myoa.modules.sys.dao;
 import com.woods.myoa.modules.sys.entity.User;
 
 public interface IUserDao {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);
@@ -15,4 +16,5 @@ public interface IUserDao {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
 }

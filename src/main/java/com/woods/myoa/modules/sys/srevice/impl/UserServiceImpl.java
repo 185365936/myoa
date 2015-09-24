@@ -16,14 +16,7 @@ public class UserServiceImpl implements IUserService {
     @Resource
     private IUserDao userDao;
 
-    @Override
     public User getUserById(Integer id) {
-
-        System.out.println("222");
-        System.out.println("111");
-        System.out.println("333");
-        System.out.println("444");
-
         return this.userDao.selectByPrimaryKey(id);
     }
 }
