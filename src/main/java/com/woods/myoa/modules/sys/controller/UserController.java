@@ -28,7 +28,7 @@ public class UserController {
 
         System.out.println(user.getName());
 //        logger.info(JSON.toJSONString(user));
-        return "userInfo";
+        return "/modules/sys/userInfo";
 
     }
 

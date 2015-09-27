@@ -59,8 +59,15 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>springServlet</servlet-name>
+        <url-pattern>/a</url-pattern><!-- 必须 -->
+    </servlet-mapping>
+
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index</welcome-file><!-- 必须 -->
     </welcome-file-list>
+
+
 
 </web-app>
