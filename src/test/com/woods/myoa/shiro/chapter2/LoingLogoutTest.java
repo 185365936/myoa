@@ -39,7 +39,7 @@ public class LoingLogoutTest {
 
         subject.logout();
 
-        //add shirodemo 
+        //add shirodemo
 
 
     }
