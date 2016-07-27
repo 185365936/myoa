@@ -19,38 +19,38 @@ import java.util.List;
  */
 public class LoingLogoutTest {
 
-
     @Test
     public void testCustomReal(){
 
-        Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro/shiro-realm.ini");
-        SecurityManager securityManager = factory.getInstance();
+        //1.SecurityManager工厂，此处用ini文件舒适化SecurityManger
+        Factory<SecurityManager> securityManagerFactory = new IniSecurityManagerFactory("classpath:shiro/shiro.ini");
+        //2.得到SecurityManager实例，并绑定SecurityUtils
+        SecurityManager securityManager = securityManagerFactory.getInstance();
         SecurityUtils.setSecurityManager(securityManager);
+        //3.得到subject及创建用户名/密码身份验证Token（即用户身份验证）
         Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken("zhang", "123456");
-
+        AuthenticationToken token = new UsernamePasswordToken("zhang", "123456");
+        //4.登陆验证身份
         subject.login(token);
-
+        //5.测试
         Assert.assertEquals(true, subject.isAuthenticated());
-
-        List list = new ArrayList();
+        //6.退出
+        subject.logout();
     }
 
     @Test
     public void testHelloWorld(){
 
-        //1.SecurityManager工厂，此处用ini文件舒适化SecurityManager
-        Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro/shiro.Ini");
-        //2.得到SecurityManager实例，并绑定给SecurityManager
+        //1.SecurityManager工厂，此处用ini文件初始化SecurityManager
+        Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro/shiro.ini");
+        //2.得到SecurityManager实例，并绑定给SecurityUtils
         SecurityManager securityManager = factory.getInstance();
         SecurityUtils.setSecurityManager(securityManager);
         //3.得到Subject及创建用户名/密码身份验证Token（即用户身份验证）
         Subject subject = SecurityUtils.getSubject();
 //        UsernamePasswordToken token = new UsernamePasswordToken("zhang", "");
-        AuthenticationToken token = new UsernamePasswordToken("zhang", "123456");
-
+        AuthenticationToken token = new UsernamePasswordToken("wang", "123456");
         try {
-
             //4、登录，即身份验证
             subject.login(token);
 
@@ -61,10 +61,9 @@ public class LoingLogoutTest {
 //        System.out.println(subject.isAuthenticated());
         Assert.assertEquals(true, subject.isAuthenticated());
 
-//        subject.logout();
-
-        //add shirodemo
+        subject.logout();
 
     }
+
 
 }
